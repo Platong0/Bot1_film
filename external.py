@@ -1,6 +1,12 @@
+#external.py
+
 from functools import wraps
 import logging
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 def async_log_function_call(func):
    """Декоратор для логування викликів асинхронних функцій"""
