@@ -79,15 +79,17 @@
         "description": "Спа́рта (дор. Σπάρτα; атт. Σπάρτη), або Лакедемон, Лакедаймон(грец.",
         "rating": 0,
         "genre": "Unknown",
-        "actors": [],
+        "actors": [
+            "Alan Rickman"
+        ],
         "poster_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Akhilleus_Charun_Cdm_Paris_2783_full.jpg"
     },
     {
-        "name": "Список ігор серії Final Fantasy",
-        "description": "Final Fantasy (яп. ファイナルファンタジー, Файнару Фантадзі:, Остання фантазія) — серія відеоігор, а також торгова марка, що базується на цій серії та належить японській компанії Square Enix (раніше Square). Перша гра, що в подальшому дала назву всій серії, вийшла в Японії в 1987 році.",
+        "name": "Дюна",
+        "description": "Дю́на — пагорб навіяного вітром піску. Зазвичай термін «дюна» застосовують до всіх піщаних утворень незалежно від зонально-кліматичних умов. На відміну від поширених у пустелях барханів, у дюни (в цьому розумінні) випуклу форму мають не пологі, а круті схили, і «хвости» розташовані ззаду дюни, на навітряному боці.",
         "rating": 0,
         "genre": "Unknown",
         "actors": [],
-        "poster_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
+        "poster_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/1_li_jiang_guilin_yangshuo_2011.jpg"
     }
 ]

@@ -5,7 +5,7 @@ import re
 from data import add_film
 import aiohttp
 
-DEFAULT_POSTER_URL = "https://example.com/path/to/no-image.png"
+DEFAULT_POSTER_URL = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg"
 
 wikipedia.set_lang("uk")
 
@@ -32,12 +32,14 @@ async def fetch_and_save_film_with_actors(title: str) -> dict | None:
         summary = wikipedia.summary(title, sentences=3)
         actors = extract_actors_from_content(page.content)
 
-        poster_url = page.images[0] if page.images else DEFAULT_POSTER_URL
-        if not poster_url or not poster_url.startswith("http"):
-            poster_url = DEFAULT_POSTER_URL
-
-        if not await is_url_valid(poster_url):
-            poster_url = DEFAULT_POSTER_URL
+        # Выбор подходящего постера
+        poster_url = DEFAULT_POSTER_URL
+        for img_url in page.images:
+            img_url_lower = img_url.lower()
+            if img_url_lower.endswith((".jpg", ".jpeg", ".png", ".webp")):
+                if await is_url_valid(img_url):
+                    poster_url = img_url
+                    break
 
         film = {
             "name": page.title,
@@ -54,6 +56,7 @@ async def fetch_and_save_film_with_actors(title: str) -> dict | None:
             "actors": ", ".join(actors) if actors else "не знайдено",
             "description": summary
         }
+
     except wikipedia.exceptions.DisambiguationError as e:
         return {"error": f"🔎 Назва не однозначна. Можливо ти мав на увазі: {', '.join(e.options[:3])}"}
     except wikipedia.exceptions.PageError:

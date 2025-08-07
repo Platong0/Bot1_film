@@ -1,3 +1,5 @@
+#info.py
+
 from external import async_log_function_call
 
 from aiogram.filters import CommandStart, Command

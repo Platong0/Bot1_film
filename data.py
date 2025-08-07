@@ -1,3 +1,5 @@
+#data.py
+
 import json
 import wikipedia
 from typing import Union

@@ -9,6 +9,7 @@ FILM_FILTER_COMMAND = Command("filter_movie")
 FILM_SEARCH_COMMAND = Command("search_movie")
 RANDOM_FILM_COMMAND = Command("random")
 WIKI_FILM_COMMAND = Command("wiki_film")
+BEST_FILM_COMMAND = Command("best_film")
 
 BOT_COMMANDS = [
    BotCommand(command="films", description="Перегляд списку фільмів"),
@@ -17,5 +18,6 @@ BOT_COMMANDS = [
    BotCommand(command="filter_movie", description="Фільтрувати фільми"),
    BotCommand(command="random", description="Показати випадковий фільм"),
    BotCommand(command="wiki_film", description="Додати фільм з Вікіпедії"),
+   BotCommand(command="best_film", description="Показати найкращий фільм"),
 
 ]

@@ -16,8 +16,6 @@ async def start_wiki_search(message: types.Message, state: FSMContext):
     await message.reply("Напиши название фильма, который хочешь найти в Википедии.")
     await state.set_state(WikiStates.waiting_for_title)
 
-# wiki_handlers.py
-
 @router.message(WikiStates.waiting_for_title)
 async def handle_film_title(message: types.Message, state: FSMContext):
     title = message.text.strip()
